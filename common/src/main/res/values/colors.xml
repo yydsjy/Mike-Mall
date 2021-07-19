@@ -1,4 +1,15 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <color name="dark_gray">#999999</color>
+    <color name="color_999">#999999</color>
+    <color name="white">#ffffff</color>
+    <color name="color_D1D">#D1D2D3</color>
+    <color name="color_565">#565A5A</color>
+    <color name="color_000">#000000</color>
+    <color name="color_298">#2983E5</color>
+    <color name="color_C1B">#C1BEBE</color>
+    <color name="background">#f3f4f5</color>
+    <color name="color_DD2">#DD2F24</color>
+    <color name="color_646">#646868</color>
+    <color name="color_9B9">#9B9C9D</color>
+
 </resources>

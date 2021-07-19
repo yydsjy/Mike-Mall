@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/background"
+    android:orientation="vertical">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dp_45"
+        android:background="@color/white">
+
+        <com.mikeyyds.ui.icfont.IconFontTextView
+            android:id="@+id/action_back"
+            android:layout_width="@dimen/dp_45"
+            android:layout_height="@dimen/dp_45"
+            android:layout_alignParentLeft="true"
+            android:layout_centerVertical="true"
+            android:gravity="center"
+            android:text="@string/if_back"
+            android:textSize="@dimen/sp_24" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_centerInParent="true"
+            android:gravity="center"
+            android:text="@string/register_title"
+            android:textColor="@color/color_000"
+            android:textSize="@dimen/sp_16" />
+
+    </RelativeLayout>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1px"
+        android:background="@color/color_D1D" />
+
+    <com.mikeyyds.common.ui.view.InputItemLayout
+        android:id="@+id/input_item_orderId"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dp_50"
+        android:layout_marginTop="@dimen/dp_10"
+        android:background="@color/white"
+        android:paddingLeft="@dimen/dp_16"
+        app:bottomLineAppearance="@style/lineAppearance"
+        app:hint="@string/input_item_hint_order_id"
+        app:inputTextAppearance="@style/inputTextAppearance"
+        app:inputType="number"
+        app:title="@string/input_item_title_order_id"
+        app:titleTextAppearance="@style/titleTextAppearance"
+        app:topLineAppearance="@style/lineAppearance" />
+
+    <com.mikeyyds.common.ui.view.InputItemLayout
+        android:id="@+id/input_item_mikeId"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dp_50"
+        android:background="@color/white"
+        android:paddingLeft="@dimen/dp_16"
+        app:bottomLineAppearance="@style/lineAppearance"
+        app:hint="@string/input_item_hint_mike_id"
+        app:inputTextAppearance="@style/inputTextAppearance"
+        app:inputType="number"
+        app:title="@string/input_item_title_mike_id"
+        app:titleTextAppearance="@style/titleTextAppearance" />
+
+    <com.mikeyyds.common.ui.view.InputItemLayout
+        android:id="@+id/input_item_user_name"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dp_50"
+        android:background="@color/white"
+        android:paddingLeft="@dimen/dp_16"
+        app:bottomLineAppearance="@style/lineAppearance"
+        app:hint="@string/input_item_hint_user_name"
+        app:inputTextAppearance="@style/inputTextAppearance"
+        app:inputType="text"
+        app:title="@string/input_item_title_user_name"
+        app:titleTextAppearance="@style/titleTextAppearance" />
+
+    <com.mikeyyds.common.ui.view.InputItemLayout
+        android:id="@+id/input_item_password"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dp_50"
+        android:background="@color/white"
+        android:paddingLeft="@dimen/dp_16"
+        app:bottomLineAppearance="@style/lineAppearance"
+        app:hint="@string/input_item_hint_pwd"
+        app:inputTextAppearance="@style/inputTextAppearance"
+        app:inputType="password"
+        app:title="@string/input_item_title_pwd"
+        app:titleTextAppearance="@style/titleTextAppearance" />
+
+    <com.mikeyyds.common.ui.view.InputItemLayout
+        android:id="@+id/input_item_confirm_password"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dp_50"
+        android:background="@color/white"
+        android:paddingLeft="@dimen/dp_16"
+        app:bottomLineAppearance="@style/leftMargin_lineAppearance"
+        app:hint="@string/input_item_hint_confirm_pwd"
+        app:inputTextAppearance="@style/inputTextAppearance"
+        app:inputType="password"
+        app:title="@string/input_item_title_confirm_pwd"
+        app:titleTextAppearance="@style/titleTextAppearance" />
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/action_register"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dp_58"
+        android:layout_marginLeft="@dimen/dp_10"
+        android:layout_marginTop="@dimen/dp_10"
+        android:layout_marginRight="@dimen/dp_10"
+        android:backgroundTint="@color/color_DD2"
+        android:text="@string/register_submit"
+        android:textColor="@color/white"
+        android:textSize="@dimen/sp_16"
+        app:cornerRadius="@dimen/dp_6" />
+
+</LinearLayout>

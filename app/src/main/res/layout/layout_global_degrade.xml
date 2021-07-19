@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <com.mikeyyds.ui.icfont.IconFontTextView
+        android:id="@+id/action_back"
+        android:layout_width="@dimen/dp_45"
+        android:layout_height="@dimen/dp_45"
+        android:textSize="@dimen/sp_24"
+        android:text="@string/if_back_solid"
+        android:gravity="center"/>
+
+
+    <com.mikeyyds.common.ui.view.EmptyView
+        android:id="@+id/empty_view"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"/>
+
+
+
+
+</LinearLayout>

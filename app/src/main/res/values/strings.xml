@@ -1,6 +1,25 @@
 <resources>
     <string name="app_name">Mike-Mall</string>
-    <string name="degrade_title">Error HInt</string>
+    <string name="degrade_title">Error Hint</string>
 
     <string name="if_degrade">&#xe692;</string>
+    <string name="if_back">&#xe607;</string>
+    <string name="if_back_solid">&#xe680;</string>
+    <string name="login_title">Login</string>
+    <string name="login_title_regiser">Register</string>
+    <string name="input_item_title_user_name">User Name</string>
+    <string name="input_item_hint_user_name">Please input your user name</string>
+    <string name="login_forget_pwd">Forget password?</string>
+    <string name="input_item_hint_pwd">Please input your password</string>
+    <string name="input_item_title_pwd">Password</string>
+    <string name="login_successfully">Login Successfully</string>
+    <string name="login_failed">Login Failed</string>
+    <string name="register_title">Register</string>
+    <string name="input_item_title_order_id">Order Id</string>
+    <string name="input_item_hint_order_id">Please input your order Id</string>
+    <string name="input_item_title_mike_id">Mike Id</string>
+    <string name="input_item_hint_mike_id">Please input your Mike Id</string>
+    <string name="input_item_title_confirm_pwd">Confirm Pwd</string>
+    <string name="input_item_hint_confirm_pwd">Please confirm your password</string>
+    <string name="register_submit">Submit</string>
 </resources>
