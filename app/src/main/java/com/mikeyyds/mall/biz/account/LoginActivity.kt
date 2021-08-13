@@ -1,7 +1,8 @@
-package com.mikeyyds.mall.biz
+package com.mikeyyds.mall.biz.account
 
 import android.app.Activity
 import android.content.Intent
+import android.graphics.Color
 import android.os.Bundle
 import android.text.TextUtils
 import android.widget.Button
@@ -13,10 +14,10 @@ import com.mikeyyds.common.ui.view.InputItemLayout
 import com.mikeyyds.common.utils.SPUtil
 import com.mikeyyds.library.restful.MikeCallback
 import com.mikeyyds.library.restful.MikeResponse
+import com.mikeyyds.library.util.MikeStatusBar
 import com.mikeyyds.mall.R
 import com.mikeyyds.mall.http.ApiFactory
 import com.mikeyyds.mall.http.api.AccountApi
-import org.w3c.dom.Text
 
 @Route(path = "/account/login")
 class LoginActivity : MikeBaseActivity() {
@@ -25,6 +26,7 @@ class LoginActivity : MikeBaseActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_login)
+
 
         findViewById<TextView>(R.id.action_back).setOnClickListener {
             onBackPressed()
@@ -37,6 +39,8 @@ class LoginActivity : MikeBaseActivity() {
         findViewById<Button>(R.id.action_login).setOnClickListener {
             goLogin()
         }
+
+        MikeStatusBar.setStatusBar(this,true, Color.WHITE,false)
     }
 
     private fun goLogin() {
@@ -53,17 +57,17 @@ class LoginActivity : MikeBaseActivity() {
                     if (response.code == MikeResponse.SUCCESS){
                         showToast(getString(R.string.login_successfully))
                         val data = response.data
-                        SPUtil.putString("boarding-pass",data!!)
-                        setResult(Activity.RESULT_OK, Intent())
+                        AccountManager.loginSuccess(data!!)
+//                        setResult(Activity.RESULT_OK, Intent())
                         finish()
                     } else{
-                        showToast(getString(R.string.login_failed)+response.msg)
+                        showToast(getString(R.string.login_failed)+" "+response.msg)
 
                     }
                 }
 
                 override fun onFailed(throwable: Throwable) {
-                    showToast(getString(R.string.login_failed)+throwable.message)
+                    showToast(getString(R.string.login_failed)+" "+throwable.message)
                 }
 
             })

@@ -1,7 +1,8 @@
-package com.mikeyyds.mall.biz
+package com.mikeyyds.mall.biz.account
 
 import android.app.Activity
 import android.content.Intent
+import android.graphics.Color
 import android.os.Bundle
 import android.text.TextUtils
 import android.widget.Button
@@ -11,6 +12,7 @@ import com.mikeyyds.common.ui.component.MikeBaseActivity
 import com.mikeyyds.common.ui.view.InputItemLayout
 import com.mikeyyds.library.restful.MikeCallback
 import com.mikeyyds.library.restful.MikeResponse
+import com.mikeyyds.library.util.MikeStatusBar
 import com.mikeyyds.mall.R
 import com.mikeyyds.mall.http.ApiFactory
 import com.mikeyyds.mall.http.api.AccountApi
@@ -28,6 +30,8 @@ class RegisterActivity : MikeBaseActivity() {
         findViewById<Button>(R.id.action_register).setOnClickListener {
             submit()
         }
+
+        MikeStatusBar.setStatusBar(this,true, Color.WHITE,false)
     }
 
     private fun submit() {

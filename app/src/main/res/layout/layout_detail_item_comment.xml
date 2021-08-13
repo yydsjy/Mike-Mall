@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/comment_root"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginBottom="@dimen/dp_10"
+    android:background="@color/white"
+    android:orientation="vertical"
+    android:paddingBottom="@dimen/dp_10">
+
+    <TextView
+        android:id="@+id/comment_title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_vertical"
+        android:layout_marginLeft="@dimen/dp_16"
+        android:layout_marginTop="@dimen/dp_10"
+        android:textColor="@color/color_000"
+        android:textSize="@dimen/sp_14"
+        tools:text="Comment(999)" />
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/px_2"
+        android:background="@color/color_EEE" />
+
+    <com.google.android.material.chip.ChipGroup
+        android:id="@+id/chip_group"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="@dimen/dp_16"
+        android:layout_marginTop="@dimen/dp_6"
+        android:layout_marginRight="@dimen/dp_16"
+        app:chipSpacingHorizontal="@dimen/dp_10"
+        app:chipSpacingVertical="@dimen/dp_10"
+        app:singleLine="false" />
+
+    <LinearLayout
+        android:id="@+id/comment_container"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:layout_marginRight="@dimen/dp_10"
+        android:layout_marginLeft="@dimen/dp_10"/>
+
+
+</LinearLayout>

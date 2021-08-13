@@ -1,5 +1,6 @@
 package com.mikeyyds.mall.http
 
+import android.util.Log
 import com.mikeyyds.library.restful.*
 import okhttp3.FormBody
 import okhttp3.MediaType

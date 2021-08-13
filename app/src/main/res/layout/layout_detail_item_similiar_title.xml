@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.mikeyyds.ui.icfont.IconFontTextView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:gravity="center"
+    android:layout_width="match_parent"
+    android:textColor="@color/color_DD2"
+    android:textSize="@dimen/sp_16"
+    android:background="@color/white"
+    android:layout_marginTop="@dimen/dp_10"
+    android:textStyle="bold"
+    android:text="@string/if_goods"
+    android:layout_height="@dimen/dp_45">
+
+</com.mikeyyds.ui.icfont.IconFontTextView>

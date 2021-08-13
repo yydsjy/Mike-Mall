@@ -4,37 +4,33 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    android:gravity="center">
+    android:background="@color/white">
 
+    <com.mikeyyds.ui.icfont.IconFontTextView
+        android:id="@+id/search_container"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dp_35"
+        android:background="@drawable/shape_home_search"
+        android:textSize="@dimen/sp_14"
+        android:textColor="@color/color_9FA"
+        android:gravity="center"
+        android:layout_marginTop="@dimen/dp_5"
+        android:layout_marginBottom="@dimen/dp_10"
+        android:layout_marginLeft="@dimen/dp_16"
+        android:layout_marginRight="@dimen/dp_16"
+        android:text="@string/home_search_hint"/>
 
-    <Button
-        android:id="@+id/detail"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="10dp"
-        android:text="Priority" />
+    <com.mikeyyds.ui.tab.top.MikeTabTopLayout
+        android:id="@+id/top_tab_layout"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dp_45"
+        android:background="@color/white"/>
 
-    <Button
-        android:id="@+id/vip"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="10dp"
-        android:text="Pause/Resume" />
-
-    <Button
-        android:id="@+id/authentication"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="10dp"
-        android:text="Async Task Callback" />
-
-
-    <Button
-        android:id="@+id/unknown"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="10dp"
-        android:text="Global Degrade" />
+    <androidx.viewpager.widget.ViewPager
+        android:id="@+id/view_pager"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        />
 
 
 </LinearLayout>

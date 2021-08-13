@@ -5,6 +5,9 @@ import com.mikeyyds.library.restful.MikeCall
 import com.mikeyyds.library.restful.annotation.Field
 import com.mikeyyds.library.restful.annotation.Get
 import com.mikeyyds.library.restful.annotation.Post
+import com.mikeyyds.mall.model.CourseNotice
+import com.mikeyyds.mall.model.UserProfile
+
 
 interface AccountApi {
     @Post("user/login")
@@ -20,4 +23,10 @@ interface AccountApi {
         @Field("imoocId") imoocId:String,
         @Field("orderId") orderId:String
     ):MikeCall<String>
+
+    @Get("user/profile")
+    fun profile():MikeCall<UserProfile>
+
+    @Get("notice")
+    fun notice():MikeCall<CourseNotice>
 }

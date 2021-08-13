@@ -2,9 +2,23 @@
     <string name="app_name">Mike-Mall</string>
     <string name="degrade_title">Error Hint</string>
 
+
+    <string name="if_home">&#xe8c6;</string>
+    <string name="if_recommend">&#xe63f;</string>
+    <string name="if_chat">&#xe63c;</string>
+    <string name="if_profile">&#xe634;</string>
+    <string name="if_category">&#xe600;</string>
+    <string name="if_favorite_tab_bottom">&#xe639;</string>
+    <string name="if_search">&#xe987;</string>
+
     <string name="if_degrade">&#xe692;</string>
     <string name="if_back">&#xe607;</string>
     <string name="if_back_solid">&#xe680;</string>
+    <string name="if_notify">&#xe654;</string>
+    <string name="if_history">&#xe606;</string>
+    <string name="if_empty_category">&#xe60c;</string>
+    <string name="if_address">&#xe603;</string>
+    <string name="if_favorite">&#xe604;</string>
     <string name="login_title">Login</string>
     <string name="login_title_regiser">Register</string>
     <string name="input_item_title_user_name">User Name</string>
@@ -22,4 +36,27 @@
     <string name="input_item_title_confirm_pwd">Confirm Pwd</string>
     <string name="input_item_hint_confirm_pwd">Please confirm your password</string>
     <string name="register_submit">Submit</string>
+    <string name="profile_login_desc_welcome_back">Hi welcome back</string>
+    <string name="item_notification">Course Notification</string>
+    <string name="item_favorite">My Favorite</string>
+    <string name="item_address">Mail Address</string>
+    <string name="item_history">Browser History</string>
+    <string name="profile_not_login">Please Login First</string>
+    <string name="profile_tab_item_favorite">\nFavorite</string>
+    <string name="profile_tab_item_history">\nHistory</string>
+    <string name="profile_tab_item_learn">\nMinutes</string>
+    <string name="home_search_hint">&#xe987; Search your product</string>
+    <string name="title_category">Category</string>
+    <string name="fetch_user_profile_failed">No user profile</string>
+    <string name="if_favorite_detail">&#xe60e; \nFavorite</string>
+    <string name="if_share">&#xe60d;</string>
+    <string name="if_empty_detail">&#xe60c;</string>
+    <string name="shop_desc">Product amount: %s Sold: %s</string>
+    <string name="if_goods">&#xe6d1; Similar Products</string>
+    <string name="detail_favorite_success">Success</string>
+    <string name="detail_cancel_favorite">Cancel</string>
+    <string name="detail_order_action">\nBuy Now</string>
+    <string name="title_notice">Notice</string>
+    <string name="if_notice_msg">&#xe609;</string>
+    <string name="if_notice_recommend">&#xe608;</string>
 </resources>
