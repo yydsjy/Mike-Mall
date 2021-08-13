@@ -2,6 +2,7 @@ package com.mikeyyds.common.utils
 
 import android.content.Context
 import android.content.SharedPreferences
+import com.mikeyyds.library.util.AppGlobals
 
 object SPUtil{
     val CACHE_FILE = "cache_file"
@@ -27,12 +28,12 @@ object SPUtil{
         }
     }
 
-    fun getBoolean(key:String):Boolean?{
+    fun getBoolean(key:String):Boolean{
         val shared = getShared()
         if (shared!=null){
             return shared.getBoolean(key,false)
         }
-        return null
+        return false
     }
 
     fun putInt(key:String,value: Int){

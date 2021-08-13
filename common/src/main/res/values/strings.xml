@@ -1,4 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string name="if_detail">&#xeb93;</string>
+    <string name="list_empty">&#xe60c;</string>
+    <string name="list_empty_desc">question</string>
+    <string name="list_empty_action">Refresh</string>
+    <string name="footer_loading_text">loading...</string>
 </resources>

@@ -2,6 +2,7 @@ package com.mikeyyds.common.ui.component;
 
 import android.os.Bundle;
 import android.text.TextUtils;
+import android.util.Log;
 import android.widget.Toast;
 
 import androidx.annotation.Nullable;

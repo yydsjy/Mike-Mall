@@ -31,8 +31,7 @@ open class InputItemLayout : LinearLayout {
         attributeSet,
         defStyleAttr
     ) {
-        orientation = LinearLayout.HORIZONTAL
-
+        orientation = HORIZONTAL
 
         val array =
             context.obtainStyledAttributes(attributeSet, R.styleable.InputItemLayout)
@@ -67,9 +66,7 @@ open class InputItemLayout : LinearLayout {
             bottomPaint.strokeWidth = bottomLine.height.toFloat()
         }
 
-        // TODO: 2021-07-18
         array.recycle()
-
     }
 
     private fun parseLineStyle(resId: Int): Line {
@@ -113,6 +110,7 @@ open class InputItemLayout : LinearLayout {
             applyUnit(TypedValue.COMPLEX_UNIT_SP, 15f)
         )
         editText = EditText(context)
+        editText.setPadding(0,0,0,0)
         val params = LayoutParams(LayoutParams.WRAP_CONTENT, LayoutParams.MATCH_PARENT)
         params.weight = 1f
         editText.layoutParams = params
@@ -127,7 +125,7 @@ open class InputItemLayout : LinearLayout {
         if (inputType == 0) {
             editText.inputType = InputType.TYPE_CLASS_TEXT
         } else if (inputType == 1) {
-            editText.inputType = InputType.TYPE_TEXT_VARIATION_PASSWORD or (InputType.TYPE_CLASS_TEXT)
+            editText.inputType = InputType.TYPE_TEXT_VARIATION_PASSWORD
         } else if (inputType == 2) {
             editText.inputType = InputType.TYPE_CLASS_NUMBER
         }
@@ -153,7 +151,7 @@ open class InputItemLayout : LinearLayout {
 
         titleView = TextView(context)
 
-        titleView.setTextSize(TypedValue.COMPLEX_UNIT_PX,titleSize.toFloat())
+        titleView.setTextSize(TypedValue.COMPLEX_UNIT_PX, titleSize.toFloat())
         titleView.setTextColor(titleColor)
         titleView.layoutParams = LayoutParams(LayoutParams.WRAP_CONTENT, LayoutParams.MATCH_PARENT)
         titleView.minWidth = minWidth
@@ -181,9 +179,9 @@ open class InputItemLayout : LinearLayout {
         if (bottomLine.enable) {
             canvas!!.drawLine(
                 bottomLine.leftMargin.toFloat(),
-                height-bottomLine.height.toFloat(),
+                height - bottomLine.height.toFloat(),
                 measuredWidth - bottomLine.rightMargin.toFloat(),
-                height-bottomLine.height.toFloat(),
+                height - bottomLine.height.toFloat(),
                 bottomPaint
             )
         }
