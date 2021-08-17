@@ -2,6 +2,7 @@ plugins {
     id 'com.android.library'
     id 'kotlin-android'
     id 'kotlin-kapt'
+    id 'com.alibaba.arouter'
 }
 
 android {
@@ -16,6 +17,11 @@ android {
 
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
         consumerProguardFiles "consumer-rules.pro"
+        javaCompileOptions {
+            annotationProcessorOptions {
+                arguments = [AROUTER_MODULE_NAME: project.getName()]
+            }
+        }
     }
 
     buildTypes {
@@ -45,15 +51,23 @@ android {
 dependencies {
 
     implementation "org.jetbrains.kotlin:kotlin-stdlib:$kotlin_version"
+    api 'androidx.lifecycle:lifecycle-extensions:2.2.0'
     implementation 'androidx.core:core-ktx:1.2.0'
     implementation 'androidx.appcompat:appcompat:1.1.0'
     implementation 'com.google.android.material:material:1.1.0'
     testImplementation 'junit:junit:4.+'
     androidTestImplementation 'androidx.test.ext:junit:1.1.1'
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.2.0'
-    implementation project(path: ':Mike-Log')
-    implementation project(path: ':Mike-UI')
+    api project(path: ':Mike-Log')
+    api project(path: ':Mike-UI')
+    api project(path: ':service-login')
+
 
     implementation 'com.github.bumptech.glide:glide:4.12.0'
     implementation 'com.github.bumptech.glide:compiler:4.12.0'
+
+    implementation 'com.alibaba:arouter-api:1.5.2'
+    kapt 'com.alibaba:arouter-compiler:1.5.2'
+
+    implementation 'com.squareup.retrofit2:retrofit:2.9.0'
 }

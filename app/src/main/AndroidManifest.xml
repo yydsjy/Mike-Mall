@@ -13,19 +13,20 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.MikeMall"
         android:usesCleartextTraffic="true">
-        <activity android:name=".MainActivity">
+        <activity android:name="com.yyds.biz_home.MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".biz.account.LoginActivity"></activity>
-        <activity android:name=".biz.account.RegisterActivity"></activity>
-        <activity android:name=".biz.goods.GoodsListActivity"></activity>
+        <activity android:name="com.yyds.biz_login.LoginActivity"></activity>
+        <activity android:name="com.yyds.biz_login.RegisterActivity"></activity>
+        <activity android:name="com.yyds.biz_home.goodslist.GoodsListActivity"></activity>
         <activity android:name=".route.DegradeGlobalActivity"></activity>
-        <activity android:name=".biz.detail.DetailActivity"></activity>
-        <activity android:name=".biz.notice.NotiveListActivity"></activity>
+        <activity android:name="com.yyds.biz_detail.DetailActivity"></activity>
+        <activity android:name="com.yyds.biz_home.notice.NotiveListActivity"></activity>
+        <activity android:name="com.yyds.biz_search.SearchActivity"/>
     </application>
 
 </manifest>

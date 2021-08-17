@@ -9,9 +9,8 @@ import com.alibaba.android.arouter.facade.Postcard
 import com.alibaba.android.arouter.facade.annotation.Interceptor
 import com.alibaba.android.arouter.facade.callback.InterceptorCallback
 import com.alibaba.android.arouter.facade.template.IInterceptor
-import com.alibaba.android.arouter.launcher.ARouter
 import com.mikeyyds.library.util.MainHandler
-import com.mikeyyds.mall.biz.account.AccountManager
+import com.yyds.service_login.LoginServiceProvider
 import java.lang.RuntimeException
 
 @Interceptor(name ="biz_interceptor", priority = 9)
@@ -43,11 +42,11 @@ class BizInterceptor : IInterceptor {
 
         MainHandler.post(runnable = Runnable{
 
-            if (AccountManager.isLogin()){
+            if (LoginServiceProvider.isLogin()){
                 callback?.onContinue(postcard)
             } else{
                 showToast("Please Login")
-                AccountManager.login(context, Observer {success ->
+                LoginServiceProvider.login(context, Observer { success ->
                     callback?.onContinue(postcard)
                 })
             }
