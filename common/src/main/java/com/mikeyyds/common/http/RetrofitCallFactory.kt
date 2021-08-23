@@ -40,24 +40,24 @@ class RetrofitCallFactory(val baseUrl: String) : MikeCall.Factory {
         }
 
         private fun parseResponse(response: Response<ResponseBody>): MikeResponse<T> {
-            var rawData:String? = null
-            if (response.isSuccessful){
+            var rawData: String? = null
+            if (response.isSuccessful) {
                 val body = response.body()
-                if (body!=null){
+                if (body != null) {
                     rawData = body.string()
                 }
             } else {
                 val body = response.errorBody()
-                if (body!=null){
+                if (body != null) {
                     rawData = body.string()
                 }
             }
-            return mikeConvert.convert(rawData!!,request.returnType!!)
+            return mikeConvert.convert(rawData!!, request.returnType!!)
         }
 
         override fun enqueue(callback: MikeCallback<T>) {
             val realCall = createRealCall(request)
-            realCall.enqueue(object :Callback<ResponseBody>{
+            realCall.enqueue(object : Callback<ResponseBody> {
                 override fun onFailure(call: Call<ResponseBody>, t: Throwable) {
                     callback.onFailed(throwable = t)
                 }
@@ -73,36 +73,55 @@ class RetrofitCallFactory(val baseUrl: String) : MikeCall.Factory {
         }
 
         private fun createRealCall(request: MikeRequest): Call<ResponseBody> {
-            if (request.httpMethod == MikeRequest.METHOD.GET) {
-                return apiService.get(request.headers, request.endPointUrl(), request.parameters)
-            } else if (request.httpMethod == MikeRequest.METHOD.POST) {
-                val parameters = request.parameters
-                var builder = FormBody.Builder()
-                var requestBody: RequestBody? = null
-                var jsonObject = JSONObject()
-
-                for ((key, value) in parameters!!) {
-                    if (request.formPost) {
-                        builder.add(key, value)
-                    } else {
-                        jsonObject.put(key, value)
-                    }
-                }
-
-                if (request.formPost) {
-                    requestBody = builder.build()
-                } else {
-                    requestBody = RequestBody.create(
-                        MediaType.parse("application/json;charset=utf-8"),
-                        jsonObject.toString()
+            when (request.httpMethod) {
+                MikeRequest.METHOD.GET -> {
+                    return apiService.get(
+                        request.headers,
+                        request.endPointUrl(),
+                        request.parameters
                     )
                 }
-                return apiService.post(request.headers, request.endPointUrl(), requestBody)
-            } else{
-                throw  IllegalStateException("MikeRestful only support GET POST for now, url = ${request.endPointUrl()}")
+                MikeRequest.METHOD.POST -> {
+                    val requestBody = buildRequestBody(request)
+                    return apiService.post(request.headers, request.endPointUrl(), requestBody)
+                }
+                MikeRequest.METHOD.PUT -> {
+                    val requestBody: RequestBody = buildRequestBody(request)
+                    return apiService.put(request.headers, request.endPointUrl(), requestBody)
+                }
+                MikeRequest.METHOD.DELETE -> {
+                    return apiService.delete(request.headers, request.endPointUrl())
+                }
+                else -> {
+                    throw  IllegalStateException("MikeRestful only support GET POST for now, url = ${request.endPointUrl()}")
+                }
             }
         }
 
+        private fun buildRequestBody(request: MikeRequest): RequestBody {
+            val parameters = request.parameters
+            var builder = FormBody.Builder()
+            var requestBody: RequestBody
+            var jsonObject = JSONObject()
+
+            for ((key, value) in parameters!!) {
+                if (request.formPost) {
+                    builder.add(key, value)
+                } else {
+                    jsonObject.put(key, value)
+                }
+            }
+
+            if (request.formPost) {
+                requestBody = builder.build()
+            } else {
+                requestBody = RequestBody.create(
+                    MediaType.parse("application/json;charset=utf-8"),
+                    jsonObject.toString()
+                )
+            }
+            return requestBody
+        }
     }
 
     interface ApiService {
@@ -117,6 +136,19 @@ class RetrofitCallFactory(val baseUrl: String) : MikeCall.Factory {
             @HeaderMap headers: MutableMap<String, String>?,
             @Url url: String,
             @Body body: RequestBody?
+        ): Call<ResponseBody>
+
+        @PUT
+        fun put(
+            @HeaderMap headers: MutableMap<String, String>?,
+            @Url url: String,
+            @Body body: RequestBody?
+        ): Call<ResponseBody>
+
+        @DELETE
+        fun delete(
+            @HeaderMap headers: MutableMap<String, String>?,
+            @Url url: String
         ): Call<ResponseBody>
     }
 }

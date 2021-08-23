@@ -1,4 +1,4 @@
-package com.mikeyyds.mall.route;
+package com.mikeyyds.common.route;
 
 public interface RouteFlag {
     int FLAG_LOGIN = 0x01;

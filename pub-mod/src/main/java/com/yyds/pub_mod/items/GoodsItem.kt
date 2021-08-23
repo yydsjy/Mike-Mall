@@ -3,6 +3,7 @@ package com.yyds.pub_mod.items
 import android.content.Context
 import android.os.Bundle
 import android.text.TextUtils
+import android.util.Log
 import android.view.*
 import android.widget.LinearLayout
 import android.widget.TextView
@@ -68,11 +69,16 @@ open class GoodsItem(val goodsModel: GoodsModel, val isHotTab: Boolean) :
         }
 
         holder.itemView.setOnClickListener {
+            Log.e("TAG", "onBindData: " )
             val bundle = Bundle()
             bundle.putString("goodsId", goodsModel.goodsId)
             bundle.putParcelable("goodsModel", goodsModel)
             MikeRoute.startActivity(context, bundle, MikeRoute.Destination.DETAIL_MAIN)
         }
+
+
+
+
 
     }
 

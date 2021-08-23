@@ -4,6 +4,7 @@ import android.content.Context
 import android.util.AttributeSet
 import android.util.Log
 import android.view.LayoutInflater
+import android.view.MotionEvent
 import android.view.View
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
@@ -19,6 +20,7 @@ open class MikeRecyclerView @JvmOverloads constructor(
     private var footerView: View? = null
     private var isLoadingMore: Boolean = false
     private var loadMoreScrollListener: OnScrollListener? = null
+
 
     inner class LoadMoreScrollListener(val prefetchSize: Int, val callback: () -> Unit) :
         OnScrollListener() {

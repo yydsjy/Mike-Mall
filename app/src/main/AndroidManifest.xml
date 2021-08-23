@@ -27,6 +27,8 @@
         <activity android:name="com.yyds.biz_detail.DetailActivity"></activity>
         <activity android:name="com.yyds.biz_home.notice.NotiveListActivity"></activity>
         <activity android:name="com.yyds.biz_search.SearchActivity"/>
+        <activity android:name="com.yyds.biz_order.OrderActivity"/>
+        <activity android:name="com.yyds.biz_order.address.AddressListActivity"/>
     </application>
 
 </manifest>

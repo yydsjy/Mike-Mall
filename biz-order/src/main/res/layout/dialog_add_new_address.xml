@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginLeft="@dimen/dp_16"
+        android:layout_marginRight="@dimen/dp_16"
+        android:background="@drawable/shape_dialog_add_new_address"
+        android:orientation="vertical">
+
+        <com.mikeyyds.ui.title.MikeNavigationBar
+            android:id="@+id/nav_bar"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/dp_45"
+            app:nav_title="@string/title_new_address" />
+
+        <com.mikeyyds.common.ui.view.InputItemLayout
+            android:id="@+id/user_name"
+            style="@style/AddNewAddress"
+            app:hint="@string/address_hint_recevier"
+            app:inputType="text"
+            app:title="@string/address_title_recevier"
+            app:titleTextAppearance="@style/titleTextAppearance" />
+
+        <com.mikeyyds.common.ui.view.InputItemLayout
+            android:id="@+id/user_phone"
+            style="@style/AddNewAddress"
+            app:hint="@string/address_hint_phone"
+            app:inputType="number"
+            app:title="@string/address_title_phone"
+            app:titleTextAppearance="@style/titleTextAppearance" />
+
+        <com.mikeyyds.common.ui.view.InputItemLayout
+            android:id="@+id/address_pick"
+            style="@style/AddNewAddress"
+            app:hint="@string/address_hint_pick"
+            app:inputType="text"
+            app:title="@string/address_title_area"
+            app:titleTextAppearance="@style/titleTextAppearance" />
+
+        <com.mikeyyds.common.ui.view.InputItemLayout
+            android:id="@+id/address_detail"
+            style="@style/AddNewAddress"
+            android:layout_height="@dimen/dp_90"
+            app:hint="@string/address_hint_detail"
+            app:inputType="text"
+            app:title="@string/address_title_detail"
+            app:titleTextAppearance="@style/titleTextAppearance" />
+        
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/action_save_address"
+            android:layout_margin="@dimen/dp_16"
+            android:gravity="center"
+            android:padding="@dimen/dp_0"
+            android:textColor="@color/white"
+            android:backgroundTint="@color/color_DD2"
+            android:text="@string/address_save"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/dp_58"/>
+    </LinearLayout>
+
+</FrameLayout>

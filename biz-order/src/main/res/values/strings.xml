@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="title_order_confirm">Confirm Order</string>
+    <string name="add_order_address">Add Address</string>
+    <string name="amount_of_order">Order Amount</string>
+    <string name="channel_wx_pay">WeChat</string>
+    <string name="total_pay">Total Amount:</string>
+    <string name="pay_now">Pay Now</string>
+    <string name="free_transport">¥ %s  No Delivery Fee</string>
+    <string name="title_new_address">Edit Address</string>
+    <string name="address_hint_detail">Street No</string>
+    <string name="address_title_detail">Detail Address</string>
+    <string name="address_hint_pick">Please Select</string>
+    <string name="address_title_area">Region</string>
+    <string name="address_hint_phone">Receiver Cellphone</string>
+    <string name="address_title_phone">Cellphone</string>
+    <string name="address_hint_recevier">Receiver Name</string>
+    <string name="address_title_recevier">Username</string>
+    <string name="address_save">Save</string>
+    <string name="address_info_too_simple">Please Complete Address</string>
+    <string name="city_data_set_empty">Null City</string>
+    <string name="nav_add_address">Add</string>
+    <string name="address_default">Default</string>
+    <string name="set_default_address">Click to Set Default</string>
+    <string name="title_address">Receiver Address</string>
+    <string name="item_edit_address">Edit</string>
+    <string name="address_delete_title">Are You Sure to Delete the Address?</string>
+    <string name="address_delete_ensure">Yes</string>
+    <string name="address_delete_cancel">No</string>
+    <string name="if_close">&#xe611;</string>
+</resources>

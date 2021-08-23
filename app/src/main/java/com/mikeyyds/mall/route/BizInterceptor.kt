@@ -9,6 +9,7 @@ import com.alibaba.android.arouter.facade.Postcard
 import com.alibaba.android.arouter.facade.annotation.Interceptor
 import com.alibaba.android.arouter.facade.callback.InterceptorCallback
 import com.alibaba.android.arouter.facade.template.IInterceptor
+import com.mikeyyds.common.route.RouteFlag
 import com.mikeyyds.library.util.MainHandler
 import com.yyds.service_login.LoginServiceProvider
 import java.lang.RuntimeException
@@ -23,7 +24,7 @@ class BizInterceptor : IInterceptor {
     override fun process(postcard: Postcard?, callback: InterceptorCallback?) {
         val flag = postcard!!.extra
         if ((flag and RouteFlag.FLAG_LOGIN) != 0) {
-            callback!!.onInterrupt(RuntimeException("need login"))
+//            callback!!.onInterrupt(RuntimeException("need login"))
             loginIntercept(postcard,callback)
         } else if ((flag and RouteFlag.FLAG_AUTHENTICATION) != 0) {
             callback!!.onInterrupt(RuntimeException("need authentication"))

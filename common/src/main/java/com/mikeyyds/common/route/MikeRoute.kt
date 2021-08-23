@@ -30,7 +30,9 @@ object MikeRoute {
         GOODS_LIST("/goods/list","goods list"),
         DETAIL_MAIN("/detail/main","goods detail"),
         NOTICE_LIST("/notice/list","notice list"),
-        SEARCH_MAIN("/search/main","search activity")
+        SEARCH_MAIN("/search/main","search activity"),
+        ORDER_MAIN("/order/main","order activity"),
+        ADDRESS_LIST("/address/list","address list")
     }
 
     fun startActivity(

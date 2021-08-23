@@ -3,6 +3,7 @@ package com.yyds.biz_detail
 import android.graphics.Color
 import android.os.Bundle
 import android.text.TextUtils
+import android.util.Log
 import android.view.View
 import android.widget.FrameLayout
 import android.widget.TextView
@@ -124,6 +125,19 @@ class DetailActivity : MikeBaseActivity() {
             detailModel.groupPrice,
             detailModel.marketPrice
         ) + getString(R.string.detail_order_action)
+        findViewById<TextView>(R.id.action_order).setOnClickListener {
+            val bundle = Bundle()
+            bundle.putString("shopName", detailModel.shop.name)
+            bundle.putString("shopLogo", detailModel.shop.logo)
+            bundle.putString("goodsId", detailModel.goodsId)
+            bundle.putString("goodsImage", detailModel.sliderImage)
+            bundle.putString("goodsName", detailModel.goodsName)
+            bundle.putString(
+                "goodsPrice",
+                selectPrice(detailModel.groupPrice, detailModel.marketPrice)
+            )
+            MikeRoute.startActivity(this@DetailActivity, bundle, MikeRoute.Destination.ORDER_MAIN)
+        }
     }
 
     private fun updateFavoriteActionFace(isFavorite: Boolean) {
